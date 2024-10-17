@@ -3,48 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Site</title>
-    <link rel="stylesheet" href="./dom.css">
-    <body>
-        <div id="Main">
-     
-          <div id="First">
-            <h2 id="History-Data"></h2>
-            <h1 id="Answer-Data"></h1>
-          </div>
-     
-     
-          <div id="Second">
-            <button class="Btn">CE</button>
-            <button class="Btn">C</button>
-            <button class="Btn">x<sup>2</sup></button>
-            <button class="Btn">%</button>
-     
-     
-            <button class="Btn">9</button>
-            <button class="Btn">8</button>
-            <button class="Btn">7</button>
-            <button class="Btn">÷</button>
-     
-     
-            <button class="Btn">6</button>
-            <button class="Btn">5</button>
-            <button class="Btn">4</button>
-            <button class="Btn">x</button>
-     
-     
-            <button class="Btn">3</button>
-            <button class="Btn">2</button>
-            <button class="Btn">1</button>
-            <button class="Btn">-</button>
-     
-     
-            <button class="Btn">.</button>
-            <button class="Btn">0</button>
-            <button class="Btn">=</button>
-            <button class="Btn">+</button>
-          </div>
+    <title>Coming Soon - Exciting Launch</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        .bg {
+            background-image: url('https://source.unsplash.com/1600x900/?nature,water');
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        h1 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        .form-group {
+            display: flex;
+            margin-bottom: 1rem;
+        }
+        input[type="email"] {
+            flex-grow: 1;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px 0 0 5px;
+            font-size: 1rem;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #message {
+            margin-top: 1rem;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        .social-icons {
+            margin-top: 2rem;
+        }
+        .social-icons a {
+            color: #333;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #4CAF50;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</head>
+<body>
+    <div class="bg">
+        <div class="container fade-in">
+            <h1>Coming Soon</h1>
+            <p>We're working on something amazing! Be the first to know when we launch.</p>
+            <form id="notifyForm">
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                    <button type="submit">Notify Me</button>
+                </div>
+            </form>
+            <p id="message"></p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
-      </body>
-<script src="./Dom.js"></script>
+    </div>
+
+    <script>
+        document.getElementById('notifyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var email = document.getElementById('email').value;
+            
+            document.getElementById('message').textContent = 'Thank you! We\'ll notify you at ' + email + ' when we launch.';
+            document.getElementById('email').value = '';
+        });
+    </script>
+</body>
 </html>
